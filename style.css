@@ -19,6 +19,16 @@ main {
     font-family: Verdana, sans-serif;
 }
 
+.select-options-container{
+    display:flex;
+    justify-content: center;
+
+}
+
+.select-wrapper{
+    margin-left: 2px;
+}
+
 #searchTable{
     margin-left: auto;
     margin-right: auto;

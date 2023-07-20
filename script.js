@@ -6840,16 +6840,15 @@ allData = [
 ];
 
 
-// console.log(allData);
-
-
 function database(data) {
     const search = document.getElementById("search");
     const table = document.getElementById("searchTable");
-    //console.log(data);
-    search.addEventListener("input", () => {
+    
+    search.addEventListener("input", searchField);
+        
+    function searchField(){
+
         const searchArray = search.value.split(" ");
-        //console.log(searchArray);
         let tableHTML = "";
         data.forEach(question => {
             
@@ -6881,8 +6880,21 @@ function database(data) {
             }
         });
         table.innerHTML=tableHTML;
+    }
 
-    })
+    const selectList = document.querySelectorAll(".select-list");
+    selectList.forEach(list => {
+        list.addEventListener("change", (e) => {
+            search.value = search.value + " " + e.target.value;
+            searchField();
+         });
+    });
+
+    // selectSource.addEventListener("change", (e) => {
+    //     search.value = search.value + " " + e.target.value;
+    //     searchField();
+    // });
+
     
 }
 
